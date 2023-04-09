@@ -23,7 +23,7 @@ int priorGet(char symbol) {
   return -1;
 }
 
-//std::string infx2pstfx(std::string inf) {
+std::string infx2pstfx(std::string inf) {
   TStack<char, 100> stack;
   std::string output = "";
   int prior = 0;
