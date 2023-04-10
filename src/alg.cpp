@@ -88,10 +88,10 @@ int eval(std::string pref) {
   int prior = 0;
   for (auto& op : pref) {
     prior = priorGet(op);
-    if (prior == -100) { 
+    if (prior == -100) {
       continue;
     }
-    if (prior == -1) { 
+    if (prior == -1) {
       stack1.push(op - 48);
     } else {
       int peremen = 0;
