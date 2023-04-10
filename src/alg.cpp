@@ -31,7 +31,7 @@ std::string infx2pstfx(std::string inf) {
   for (auto& op : inf) {
     prior = priorGet(op);
     gratPrior = priorGet(stack.get());
-    if (op == '\n') { 
+    if (op == '\n') {
       while (priorGet(stack.get()) > 1) {
         output += stack.pop();
         output += " ";
@@ -41,21 +41,17 @@ std::string infx2pstfx(std::string inf) {
     if (prior == -1) {
       output += op;
       output += " ";
-    }
-    else if (prior == 0) { 
+    } else if (prior == 0) {
       stack.push(op);
-    }
-    else if (prior == 1) { 
+    } else if (prior == 1) {
       while (priorGet(stack.get()) > 0) {
         output += stack.pop();
         output += " ";
       }
       stack.pop();
-    }
-    else if (prior > gratPrior || stack.isEmpty()) {
+    } else if (prior > gratPrior || stack.isEmpty()) {
       stack.push(op);
-    }
-    else if (prior <= gratPrior && prior > 1) {
+    } else if (prior <= gratPrior && prior > 1) {
       while (priorGet(stack.get()) > 1) {
         output += stack.pop();
         output += " ";
@@ -97,11 +93,10 @@ int eval(std::string pref) {
     }
     if (prior == -1) { 
       stack1.push(op - 48);
-    }
-    else {
-      int hz = 0;
-      while (!(stack1.isEmpty() + hz)) {
-        hz += 1;
+    } else {
+      int peremen = 0;
+      while (!(peremen + stack1.isEmpty())) {
+        peremen += 1;
         int a = stack1.pop();
         int b = stack1.pop();
         preoret = opreoretat(b, a, op);
